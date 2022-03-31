@@ -1,0 +1,5 @@
+<p>dashboard works!</p>
+<div *ngIf="products$|async">
+  <app-product-list [products]="products$ | async"></app-product-list>
+</div>
+
