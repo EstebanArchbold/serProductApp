@@ -10,10 +10,12 @@ import {Observable} from "rxjs";
 })
 export class CartComponent implements OnInit {
   products$!: Observable<Partial<Producto[]>>;
+  public cartProducts$!: Observable<Partial<Producto[]>>
   constructor(private sirioService: SirioService) { }
 
   ngOnInit(): void {
     this.products$ = this.sirioService.productCart$;
+    this.cartProducts$ = this.sirioService.productCart$;
   }
 
 }
