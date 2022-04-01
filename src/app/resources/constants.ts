@@ -1,1 +1,1 @@
-export const API_BASE_URL = 'https://api.siriodev.com/api/';
+export const API_BASE_URL = 'api/';

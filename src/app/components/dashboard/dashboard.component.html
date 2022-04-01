@@ -10,13 +10,14 @@
           <a class="nav-link active" aria-current="page" href="#">Home</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="../cart/cart.component.html">Cart</a>
+          <a class="nav-link" [routerLink]="['./cart']">Cart</a>
         </li>
       </ul>
     </div>
+    {{'Productos ' + (cartProducts$ | async)?.length}}
   </div>
 </nav>
-<div *ngIf="products$|async">
-  <app-product-list [products]="products$ | async"></app-product-list>
+<div *ngIf="products$ | async">
+  <app-product-list (onAddToCart)="addSelectedProductToCart($event)" [products]="products$ | async"></app-product-list>
 </div>
 

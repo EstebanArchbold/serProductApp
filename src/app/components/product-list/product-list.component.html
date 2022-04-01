@@ -1,6 +1,8 @@
-<div *ngIf="products?.length">
-  <div *ngFor="let product of products">
-    <app-product-card [product]="product"></app-product-card>
+<div *ngIf="products?.length" class="container">
+  <div class="row">
+    <div *ngFor="let product of products" class="col-md-3">
+      <app-product-card (onAddToCart)="onAddToCart.emit($event)" [product]="product"></app-product-card>
+    </div>
   </div>
 </div>
 

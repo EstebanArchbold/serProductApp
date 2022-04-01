@@ -10,10 +10,15 @@ import {Producto} from "../../resources/types/Product.type";
 })
 export class DashboardComponent implements OnInit {
   public products$!: Observable<Producto[]>;
+  public cartProducts$!: Observable<Partial<Producto[]>>
   constructor(private sirioService: SirioService) { }
 
   ngOnInit(): void {
     this.products$ = this.sirioService.loadProducts();
+    this.cartProducts$ = this.sirioService.productCart$;
   }
 
+  addSelectedProductToCart($event: Producto) {
+    this.sirioService.addProductToCart($event);
+  }
 }

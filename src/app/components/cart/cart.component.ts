@@ -1,5 +1,7 @@
 import {Component, Input, OnInit} from '@angular/core';
 import {Producto} from "../../resources/types/Product.type";
+import {SirioService} from "../../services/sirio.service";
+import {Observable} from "rxjs";
 
 @Component({
   selector: 'app-cart',
@@ -7,10 +9,11 @@ import {Producto} from "../../resources/types/Product.type";
   styleUrls: ['./cart.component.scss']
 })
 export class CartComponent implements OnInit {
-  @Input() product!: Producto;
-  constructor() { }
+  products$!: Observable<Partial<Producto[]>>;
+  constructor(private sirioService: SirioService) { }
 
   ngOnInit(): void {
+    this.products$ = this.sirioService.productCart$;
   }
 
 }

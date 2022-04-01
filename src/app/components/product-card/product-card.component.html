@@ -1,14 +1,10 @@
-<div class="container">
-  <div class="row">
-    <div class="card" style="width: 18rem;">
-      <img src="{{product.photo?.key ? 'https://siriodev.s3.amazonaws.com/'+product.photo.key : warningPic}}" class="card-img-top" alt="photo">
-      <div class="card-body">
-        <h5 class="card-title">{{product.name}}</h5>
-        <p class="card-text">Price ${{product.price}}</p>
-        <p class="card-text">Quantity {{product.quantity}}</p>
-        <a href="#" class="btn btn-primary">Add to Cart</a>
-      </div>
-    </div>
+<div class="card" style="width: 18rem;">
+  <img height="270px" width="20px" src="{{product.photo?.key ? 'https://siriodev.s3.amazonaws.com/'+product.photo.key : warningPic}}" class="card-img-top" alt="photo">
+  <div class="card-body">
+    <h5 class="card-title">{{product.name}}</h5>
+    <p class="card-text">Price ${{product.price}}</p>
+    <p class="card-text">Quantity {{product.quantity}}</p>
+    <a (click)="addToCart($event)" class="btn btn-primary">Add to Cart</a>
   </div>
 </div>
 
