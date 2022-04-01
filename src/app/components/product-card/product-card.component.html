@@ -1,5 +1,5 @@
 <div class="container">
-  <div class="row align-items-center">
+  <div class="row">
     <div class="card" style="width: 18rem;">
       <img src="{{product.photo?.key ? 'https://siriodev.s3.amazonaws.com/'+product.photo.key : warningPic}}" class="card-img-top" alt="photo">
       <div class="card-body">
@@ -11,5 +11,24 @@
     </div>
   </div>
 </div>
+
+<!--
+<div class="container">
+  <div class="col-xs-12 col-sm-l col-md-4">
+    <div class="card">
+      <div class="image">
+        <img src="{{product.photo?.key ? 'https://siriodev.s3.amazonaws.com/'+product.photo.key : warningPic}}" class="card-img-top" alt="photo">
+      </div>
+      <div class="card-body">
+        <h5 class="card-title">{{product.name}}</h5>
+        <p class="card-text">Price ${{product.price}}</p>
+        <p class="card-text">Quantity {{product.quantity}}</p>
+        <a href="#" class="btn btn-primary">Add to Cart</a>
+      </div>
+    </div>
+  </div>
+</div>
+-->
+
 
 

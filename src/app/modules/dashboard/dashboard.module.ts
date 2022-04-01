@@ -5,13 +5,15 @@ import { DashboardRoutingModule } from './dashboard-routing.module';
 import { DashboardComponent } from '../../components/dashboard/dashboard.component';
 import { ProductListComponent } from '../../components/product-list/product-list.component';
 import { ProductCardComponent } from '../../components/product-card/product-card.component';
+import { CartComponent } from '../../components/cart/cart.component';
 
 
 @NgModule({
   declarations: [
     DashboardComponent,
     ProductListComponent,
-    ProductCardComponent
+    ProductCardComponent,
+    CartComponent
   ],
   imports: [
     CommonModule,
